@@ -16,18 +16,18 @@ TextLayer hello_layer;
 
 void handle_init(AppContextRef ctx) {
       window_init(&window, "Window Name");
-        window_stack_push(&window, true /* Animated */);
+      window_stack_push(&window, true /* Animated */);
         
-          text_layer_init(&hello_layer, GRect(0, 65, 144, 30));
-            text_layer_set_text_alignment(&hello_layer, GTextAlignmentCenter);
-              text_layer_set_text(&hello_layer, "You're amazing");
-                text_layer_set_font(&hello_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-                  layer_add_child(&window.layer, &hello_layer.layer);
+      text_layer_init(&hello_layer, GRect(0, 65, 144, 30));
+      text_layer_set_text_alignment(&hello_layer, GTextAlignmentCenter);
+      text_layer_set_text(&hello_layer, "You're amazing");
+      text_layer_set_font(&hello_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
+      layer_add_child(&window.layer, &hello_layer.layer);
 }
 
 void pbl_main(void *params) {
-  PebbleAppHandlers handlers = {
-    .init_handler = &handle_init
-  };
-  app_event_loop(params, &handlers);
+    PebbleAppHandlers handlers = {
+        .init_handler = &handle_init
+    };
+    app_event_loop(params, &handlers);
 }
